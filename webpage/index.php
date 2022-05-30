@@ -34,7 +34,10 @@
 </head>
 
 <html>
-	<h1>ESE  VI Elevator</h1> 
+	<div class="MainC">
+
+	</div>
+	<h1>Elevator Control</h1> 
 	
 		<?php 
 			if(isset($_POST['newfloor'])) {
