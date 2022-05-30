@@ -1,0 +1,45 @@
+
+body {
+    background: url(../images/background.jpg);
+  }
+
+.layout {
+    
+    margin: auto;
+    width: 50%;
+    display: grid;
+    grid:
+    "sidebar body" 1fr
+    / auto 1fr;
+    gap: 8px;
+    background: rgb(245, 197, 234);
+    box-shadow: 5px 5px;
+
+    }
+      
+    .sidebar { grid-area: sidebar; }
+    .body { grid-area: body; }
+h1{ text-align: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgb(240, 179, 235);
+    color: darkmagenta;
+    }     
+      
+li.gpmember{display: inline-block; font-size: 40px;}
+
+
+   
+
+.item {
+    width: 10000px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: middle
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
