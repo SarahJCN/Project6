@@ -55,7 +55,14 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    color: white;
   }
 .Name{
     color: white;
+}
+section.Navbar ul{
+    text-align: center;
+}
+section.Navbar li{
+    display: inline;
 }
