@@ -56,8 +56,18 @@ body {
 .Name{
     color: white;
 }
-.Status{
+.StatusGreen{
     background-color: rgb(86, 207, 157);
+    width: fit-content;
+    padding: 2px;
+}
+.StatusYellow{
+    background-color: rgb(226, 229, 12);
+    width: fit-content;
+    padding: 2px;
+}
+.StatusRed{
+    background-color: rgb(229, 19, 12);
     width: fit-content;
     padding: 2px;
 }
