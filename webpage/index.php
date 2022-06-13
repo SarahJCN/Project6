@@ -53,14 +53,6 @@
 		</form>
 	</h2>
 	</div>
-	
-	<script>
-		function startTime(){
-			var time = new Date();
-			document.getElementById("time").innerHTML = "The current time is: " + time.toTimeString();
-			var t = setTimeout(startTime, 500);
-		}
-	</script>
 </html>
  
  
