@@ -13,17 +13,38 @@
 			<div>
 				<label for="user" class="text_label">Username:</label>
 				<input id="user" type="text" class="text_input" name="username" />
+				<p id="demo"></p>
+				<script>
+					const element = document.getElementById("user");
+					element.addEventListener("input", function() 
+					{
+					  document.getElementById("demo").innerHTML = "please enter a minimum of 7 characters";
+					});
+				</script>
 			</div>
 			<div>
 				<label for="pass" class="text_label">Password:</label>
-				<input id="pass" type="password" class="text_input" name="password" required /> 
+				<input id="pass" type="password" class="text_input" name="password" required />
+				<p id="demo"></p>
+				<script>
+					const element2 = document.getElementById("pass");
+					element2.addEventListener("input", function() 
+					{
+				 	 document.getElementById("demo").innerHTML = "please enter a minimum of 7 characters";
+					});
+				</script>
 			</div>
-			<div><input type="submit" value="Log in" id="submit"/></div>
+			<div>
+				<input type="submit" value="Log in" id="submit"/>
+			</div>
 			<div><a class="button" href="request_access.html">Request Access</a></div>
 		</form>
 		<a href="index.html">Back to the Index</a>
 		
 		<br />
-		<p>Copyright &copy 2022 Chris Le, Robyn Porter and Tori Le</p>
+		<p>
+			<script>document.write(new Date().getFullYear())</script>
+			Copyright &copy 2022 Chris Le, Robyn Porter and Tori Le
+		</p>
 	</body>
 </html>
