@@ -10,6 +10,14 @@
 	<body>
 		<form action="php/login.php" method="post">
 			<h1>Please log in</h1>
+			<body onload="myFunction()"></body>
+			<script>
+				function myFunction() 
+				{
+				  alert("Please enter your username and password");
+				}
+				</script>
+
 			<div>
 				<label for="user" class="text_label">Username:</label>
 				<input id="user" type="text" class="text_input" name="username" />
