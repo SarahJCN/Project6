@@ -21,6 +21,8 @@ h2{
 img{
     height: 300px;
     box-shadow: 10px 10px 5px gray;
+    border: 2px solid blue;
+    margin: auto;
 }
 
 figcaption{
@@ -38,5 +40,11 @@ body.border{
     margin-bottom: auto;
     margin-top: auto;
     border: 2px solid black;
+}
+
+figure{
+    border-radius: 25px;
+    border: 2px solid green;
+    margin: auto;
 }
 
