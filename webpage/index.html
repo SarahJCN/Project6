@@ -47,7 +47,7 @@
             <p class="pbod">
                 <a href="Tori_Logbook.html"> Tori's Logbook</a><br>
                 Studied Process Automation at McMaster University<br>
-                Currently studying Electronic Systems Engineering at Conestoga College<br>
+                Currently studying Electronic Systems Engineering at Conestoga College<br>S
                 Technical Skills:<br>
                 •	Soldering (through hole and surface mount)<br>
                 •	Solidworks, AutoCAD, MultiSim, Altium, Keil<br>
@@ -89,4 +89,13 @@
     
     <br>
 </body>
+
+<script>
+    function startTime(){
+        var time = new Date();
+        document.getElementById("time").innerHTML = "The current time is: " + time.toTimeString();
+        var t = setTimeout(startTime, 500);
+    }
+</script>
+
 </html>
