@@ -27,3 +27,15 @@ figcaption{
     font-style: italic;
     font-size: 90%;
 }
+
+body.border{
+    display:block;
+    width: 950px;
+    padding: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    border: 2px solid black;
+}
+
