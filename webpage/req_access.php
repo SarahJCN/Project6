@@ -3,7 +3,7 @@ $submitted = !empty($_POST);
 ?>
 <!DOCTYPE html>
 <html>
-	<head><title>Form Handler Page</title></head>
+	<head><title>Request Access: Form Handler Page</title></head>
 	<body>
 		<p>Form submitted? <?php echo (int) $submitted; ?> </p>
 		<p>Your Submitted info is</p>
