@@ -42,9 +42,18 @@ body.border{
     border: 2px solid black;
 }
 
+
+
 figure{
     border-radius: 25px;
     border: 2px solid green;
     margin: auto;
 }
 
+.mkbolk{
+    font-weight: bold;
+}
+
+.mkunderline{
+    text-decoration: underline;
+}
