@@ -20,6 +20,7 @@ h2{
 
 img{
     height: 300px;
+    box-shadow: 10px 10px 5px gray;
 }
 
 figcaption{
