@@ -56,6 +56,9 @@ body {
 .Name{
     color: white;
 }
+.Header{
+    color: rgb(7, 7, 7);
+}
 .StatusGreen{
     background-color: rgb(86, 207, 157);
     width: fit-content;
