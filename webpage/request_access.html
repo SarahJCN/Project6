@@ -7,6 +7,33 @@
 		<meta http-equiv="author" content="Chris Le, Robyn Porter and Tori Le" />
 		<meta http-equiv="pragma" content="no-cache" /> <!-- want browser to reload this page every time -->
 		<link href="./CSS/style3.css" type="text/css" rel="stylesheet" />
+
+	<script src="http://code.jquery.com/jquery-1.5.js"></script>
+     <script>
+      function countChar(val) 
+	  {
+        var len = val.value.length;
+        if (len > 180) 
+		{
+          val.value = val.value.substring(0, 180);
+        } 
+		else 
+		{
+          $('#charNum').text(180 - len);
+        }
+      };
+    </script>
+	<script>
+		function validateForm() 
+		{
+		  let x = document.forms["myForm"]["fname"].value;
+		  if (x == "") 
+		  {
+			alert("Name must be filled out");
+			return false;
+		  }
+		}
+		</script>
 	</head>
 	<body>
 		<h1>Request Access</h1>
@@ -14,8 +41,13 @@
 			<fieldset>
 				<legend>Contact Details</legend>
 				<div>
-					<label for="fname" class="text_label" >First Name:</label>
-					<input id="fname" class="text_input" type="text" name="firstname"  /> 
+					<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+						<label for="fname" class="text_label">First Name:</label>  
+						<input id="fname" class="text_input" type="text" name="firstname"  /> 
+						
+						<!--First Name: <input type="text" name="fname">
+  						<input type="submit" value="Submit"> -->
+					  </form>
 				</div>
 				<div>
 					<label for="lname" class="text_label">Last Name:</label>  
@@ -65,7 +97,11 @@
 			-->
 			<div>
 				<p>Tell us a bit about yourself</p>
-				<textarea name="comments" class="text">Please enter your comments here ...</textarea><br />
+				<textarea name="comments" class="text" onkeyup="countChar(this)">Please enter your comments here ...</textarea><br />
+				<p>
+					characters left: 
+					<div id="charNum">#</div>
+				</p>
 				<input id="submit" type="submit" value="Submit Request" />
 			</div>
 
