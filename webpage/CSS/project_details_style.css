@@ -57,3 +57,21 @@ figure{
 .mkunderlined{
     text-decoration: underline;
 }
+
+.subButton{
+  color: rgb(85, 173, 50) !important;
+  background: rgb(15, 77, 77) !important;
+}
+.subButton:hover {
+  background-color: rgb(114, 59, 59) !important;
+  color: black !important;
+  border-color: green !important;
+}
+.subButton:active{
+  background-image: url('../images/Logo.png') !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-color : rgb(50, 136, 64) !important;
+  color: black !important;
+  border-color: green !important;
+}
