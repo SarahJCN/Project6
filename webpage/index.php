@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	if(isset($_SESSION['user'])) {
 	function update_elevatorNetwork(int $node_ID, int $new_floor): int {
 		$dir = "";
 		$sig = "";
@@ -121,5 +123,11 @@
 		}
 	})
 </script>
+<?php 
+}
+else {
+	header ("Location:index.html");
+}
+?>
  
  
