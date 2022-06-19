@@ -1,5 +1,5 @@
 <?php
-	function update_elevatorNetwork(int $node_ID, int $new_floor =1): int {
+	function update_elevatorNetwork(int $node_ID, int $new_floor): int {
 		$dir = "";
 		$sig = "";
 		if($new_floor > 1 && $new_floor < 3)
@@ -8,23 +8,21 @@
 			$dir = "Up";
 		else
 			$dir = "Down";
-		$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
+		$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','root','');
 		$query = 'UPDATE elevatorNetwork 
-				SET currentFloor = :floor
+				SET currentFloor = :floor,
 				direction = :dir
-				WHERE nodeID = :id';
+				WHERE id = :id';
 		$statement = $db1->prepare($query);
 		$statement->bindvalue('floor', $new_floor);
 		$statement->bindvalue('dir', $dir);
 		$statement->bindvalue('id', $node_ID);
 		$statement->execute();	
-		
 		return $new_floor;
 	}
-?>
-<?php 
-	function get_currentFloor(): int {
-		try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
+
+	function get_currentFloor(): int { 
+		try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','root','');}
 		catch (PDOException $e){echo $e->getMessage();}
 
 			// Query the database to display current floor
@@ -34,9 +32,8 @@
 			}
 			return $current_floor;
 	}
-
-	function get_direction() {
-		try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
+	function get_direction() { 
+		try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','root','');}
 		catch (PDOException $e){echo $e->getMessage();}
 
 			// Query the database to display current direction
@@ -44,7 +41,7 @@
 			foreach ($rows as $row) {
 				$direction = $row[0];
 			}
-			return $direction
+			return $direction;
 	}
 ?>
 <head>
@@ -53,13 +50,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 6 landing page</title>
     <link href="./CSS/style2.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
 </head>
 
 <html>
 	<div class="MainC">
-	<h1>Elevator Control</h1> 
-	<table width="800px" align="center">
+		<h1>Elevator Control</h1> 
+		<table width="800px" align="center">
 			<tr align="center" bgcolor="gray">
 				<td style="color:white; font-size:18px">Floors</td>
 				<td style="color:white; font-size:18px">Cuurent Status</td>
@@ -82,13 +79,13 @@
 						<tr align="center">
 							<td id="floorNum">
 								<?php 
-									if(isset($_POST['newfloor'])) {
-										$curFlr = update_elevatorNetwork(1, $_POST['newfloor']); 
+									if(isset($_POST['newfloor'])) { 
+										$curFlr = update_elevatorNetwork(1,$_POST['newfloor']);
 										header('Refresh:0; url=index.php');	
 									} 
 									$curFlr = get_currentFloor();
-									echo "<h2>Current floor # $curFlr </h2>";			
-								?>		
+									echo $curFlr;			
+								?>
 							</td>
 							<td><?php echo get_direction(); ?></td>
 							<td>closed</td>
@@ -99,15 +96,15 @@
 			<tr>
 				<td></td>
 				<td>
-					<h2> 		
+					<h2> 	
 						<form action="index.php" method="POST">
-							Request floor # <input type="number" style="width:50px; height:40px" name="newfloor" max=3 min=1 required />
+							Request floor #  <br/><input type="number" style="width:150px; height:40px" name="newfloor" max="3" min="1" required />
 							<input type="submit" value="Go"/>
 						</form>
 					</h2>
 				</td>
 			</tr>
-		</table>	
+		</table>		
 	</div>
 </html>
 <script type="text/javascript">
@@ -124,4 +121,5 @@
 		}
 	})
 </script>
+ 
  
