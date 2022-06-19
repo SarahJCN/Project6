@@ -12,14 +12,11 @@
 			session_start();
 			$_SESSION['user'] = "yes";
 			header('Location:index.php');
-		}
-		else
-		{
+		}else{
 			// echo "<script>alert('')</script>";
 			header("Location:login.html?msg=Wrong email or password");
-		}
-	}
-	catch(PDOException $e) {
+		}	
+	}catch(PDOException $e){
 		echo $db1." ".$e->message();
 	}
 ?>

@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(isset($_SESSION['user'])) {
+	if(isset($_SESSION['user'])){
 	function update_elevatorNetwork(int $node_ID, int $new_floor): int {
 		$dir = "";
 		$sig = "";
@@ -57,7 +57,7 @@
 
 <html>
 	<div class="MainC">
-		<h1>Elevator Control</h1> 
+		<h1>Elevator Control(<a href="logout.php"> logout </a>)</h1> 
 		<table width="800px" align="center">
 			<tr align="center" bgcolor="gray">
 				<td style="color:white; font-size:18px">Floors</td>
@@ -123,9 +123,6 @@
 		}
 	})
 </script>
-<?php 
-}
-else {
-	header ("Location:index.html");
-}
-?>
+<?php }else{ header("Location:index.html"); } ?>
+ 
+ 
