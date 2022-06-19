@@ -1,3 +1,4 @@
+<<<<<<< HEAD:webpage/login.html
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -63,3 +64,63 @@
 		
 	</body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Forms: Login Page</title>
+		<link href="./CSS/style3.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+		<form action="php/login.php" method="post">
+			<h1>Please log in</h1>
+			<body onload="myFunction()"></body>
+			<script>
+				function myFunction() 
+				{
+				  alert("Please enter your username and password");
+				}
+			</script>
+
+			<div>
+				<label for="user" class="text_label">Username:</label>
+				<input id="user" type="text" class="text_input" name="username" />
+				<p id="demo"></p>
+				<script>
+					const element = document.getElementById("user");
+					element.addEventListener("input", function() 
+					{
+					  document.getElementById("demo").innerHTML = "please enter a minimum of 7 characters";
+					});
+				</script>
+			</div>
+			<div>
+				<label for="pass" class="text_label">Password:</label>
+				<input id="pass" type="password" class="text_input" name="password" required />
+				<p id="demo"></p>
+				<script>
+					const element2 = document.getElementById("pass");
+					element2.addEventListener("input", function() 
+					{
+				 	 document.getElementById("demo").innerHTML = "please enter a minimum of 7 characters";
+					});
+				</script>
+			</div>
+			<div>
+				<input type="submit" value="Log in" id="submit"/>
+			</div>
+			<div><a class="button" href="request_access.html">Request Access</a></div>
+		</form>
+		<a href="index.html">Back to the Index</a>
+		
+		<br />
+		<p>
+			<script>document.write(new Date().getFullYear())</script>
+			Copyright &copy 2022 Chris Le, Robyn Porter and Tori Le
+		</p>
+	</body>
+</html>
+>>>>>>> robyn-branch:webpage/Login.html
