@@ -37,17 +37,18 @@
 	</head>
 	<body>
 		<h1>Request Access</h1>
-		<form action="./req_access.php" method="post">
+		<table>
+		<form action="req_access.php" method="post">
 			<fieldset>
 				<legend>Contact Details</legend>
 				<div>
-					<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+					<!-- <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post"> -->
 						<label for="fname" class="text_label">First Name:</label>  
 						<input id="fname" class="text_input" type="text" name="firstname"  /> 
 						
-						<!--First Name: <input type="text" name="fname">
-  						<input type="submit" value="Submit"> -->
-					  </form>
+						<!-- First Name: <input type="text" name="fname"> -->
+  						<!-- <input type="submit" value="Submit">  -->
+					  <!-- </form> -->
 				</div>
 				<div>
 					<label for="lname" class="text_label">Last Name:</label>  
@@ -55,7 +56,7 @@
 				</div>
 				<div>
 					<label for="email" class="text_label">Email:</label>     
-					<input id="email" class="text_input" type="email" name="email" /> 
+					<input id="email" class="text_input" type="email" name="email" required /> 
 				</div>
 				<div>
 					<label for="website" class="text_label">Website:</label>    
@@ -64,6 +65,10 @@
 				<div>
 					<label for="bdate" class="text_label">Birth date:</label> 
 					<input id="bdate" class="text_input" type="date" name="birthday" /> 
+				</div>
+				<div>
+					<label for="password" class="text_label">Password</label> 
+					<input id="password" class="text_input" type="password" name="pass" required /> 
 				</div>
 				
 				<div>
@@ -75,12 +80,14 @@
 				</div>
 			</fieldset>
 			<!-- Checkbox -->
-			<p>I currently ... (check all that apply)</p>
-			<label><input type="checkbox" name="involvement" value="none" /> Have no involment in Project </label> <br />
+			<fieldset>
+				<legend>Selection</legend>
+				<p>I currently ... (check all that apply)</p>
+			<label><input type="checkbox" name="involvement" value="none" /> Have no involment in Project </label> 
 			<label><input type="checkbox" name="involvement" value="instructor" /> An instructor in this Project</label> <br />
-			<label><input type="checkbox" name="involvement" value="instructor_other" /> An instructor in a different Project</label> <br />
+			<label><input type="checkbox" name="involvement" value="instructor_other" /> An instructor in a different Project</label> 
 			<label><input type="checkbox" name="involvement" value="student" /> A student in this Project</label> <br />
-			<label><input type="checkbox" name="involvement" value="student_other" /> A student in a different Project </label><br />
+			<label><input type="checkbox" name="involvement" value="student_other" /> A student in a different Project </label>
 			<label><input type="checkbox" name="involvement" value="admin" /> A College Administrator </label> <br />
 			<label><input type="checkbox" name="involvement" value="external" /> An external reviewer </label><br />
 			
@@ -94,22 +101,23 @@
 			
 			<p>Files you would like to include in your request 
 			<input type="file" name="file_uploaded" />
-			-->
 			<div>
 				<p>Tell us a bit about yourself</p>
-				<textarea name="comments" class="text" onkeyup="countChar(this)">Please enter your comments here ...</textarea><br />
+				<textarea name="comments" class="text" onkeyup="countChar(this)" rows="5" cols="60">Please enter your comments here ...</textarea><br />
 				<p>
 					characters left: 
-					<div id="charNum">#</div>
+					<span id="charNum">#</span>
 				</p>
-				<input id="submit" type="submit" value="Submit Request" />
+				<input class="submit" type="submit" value = "Request Access" />
 			</div>
 
-			<input class="submit" type="submit" value = "Request Access" />
+			
 		</form>
 		<a href="index.html">Back to the Index.</a>
 		<br />
 		
 		<p>Copyright &copy 2022 Chris Le, Robyn Porter and Tori Le</p>
+			</fieldset>
+			</table>
 	</body>
 </html>
