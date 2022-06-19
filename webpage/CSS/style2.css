@@ -1,12 +1,22 @@
 .Mainc{
     text-align: center;
-    background: rgb(167, 77, 146);
+    background: rgb(244, 243, 244);
     box-shadow: 5px 10px 5px rgb(218, 168, 201);
     padding: 10px;
-    width: 50%;
+    /*width: 50%;*/
+}
+.Mainc input[type="submit"]{
+    padding: 10px;
+    width: 80px;
 }
 body {
     background: url(../images/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+}
+.floors .box{
+    width: 200px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
   }
