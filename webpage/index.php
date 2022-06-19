@@ -11,8 +11,8 @@
 		$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
 		$query = 'UPDATE elevatorNetwork 
 				SET currentFloor = :floor,
-				direction = :dir
-				WHERE id = :id';
+				otherInfo = :dir
+				WHERE nodeID = :id';
 		$statement = $db1->prepare($query);
 		$statement->bindvalue('floor', $new_floor);
 		$statement->bindvalue('dir', $dir);
@@ -37,7 +37,7 @@
 		catch (PDOException $e){echo $e->getMessage();}
 
 			// Query the database to display current direction
-			$rows = $db->query('SELECT direction FROM elevatorNetwork');
+			$rows = $db->query('SELECT otherInfo FROM elevatorNetwork');
 			foreach ($rows as $row) {
 				$direction = $row[0];
 			}
