@@ -59,23 +59,69 @@
 <html>
 	<div class="MainC">
 	<h1>Elevator Control</h1> 
-	
-	<?php 
-		if(isset($_POST['newfloor'])) {
-			$curFlr = update_elevatorNetwork(1, $_POST['newfloor']); 
-			header('Refresh:0; url=index.php');	
-		} 
-		$curFlr = get_currentFloor();
-		echo "<h2>Current floor # $curFlr </h2>";			
-	?>		
-	
-	<h2> 	
-		<form action="index.php" method="POST">
-			Request floor # <input type="number" style="width:50px; height:40px" name="newfloor" max=3 min=1 required />
-			<input type="submit" value="Go"/>
-		</form>
-	</h2>
+	<table width="800px" align="center">
+			<tr align="center" bgcolor="gray">
+				<td style="color:white; font-size:18px">Floors</td>
+				<td style="color:white; font-size:18px">Cuurent Status</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="floors">
+						<div class="box" id="3rd">3rd Floor</div>
+						<div class="box" id="2nd">2nd Floor</div>
+						<div class="box" id="1st">1st Floor</div>
+					</div>
+				</td>
+				<td>
+					<table width="300px">
+						<tr bgcolor="gray" align="center">
+							<td style="color:white; font-size:18px">Current Floor</td>
+							<td style="color:white; font-size:18px">Direction</td>
+							<td style="color:white; font-size:18px">Signal</td>
+						</tr>
+						<tr align="center">
+							<td id="floorNum">
+								<?php 
+									if(isset($_POST['newfloor'])) {
+										$curFlr = update_elevatorNetwork(1, $_POST['newfloor']); 
+										header('Refresh:0; url=index.php');	
+									} 
+									$curFlr = get_currentFloor();
+									echo "<h2>Current floor # $curFlr </h2>";			
+								?>		
+							</td>
+							<td><?php echo get_direction(); ?></td>
+							<td>closed</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<h2> 		
+						<form action="index.php" method="POST">
+							Request floor # <input type="number" style="width:50px; height:40px" name="newfloor" max=3 min=1 required />
+							<input type="submit" value="Go"/>
+						</form>
+					</h2>
+				</td>
+			</tr>
+		</table>	
 	</div>
 </html>
- 
+<script type="text/javascript">
+	$(document).ready(function(){
+		var num = $("#floorNum").html();
+		if(num == 1){
+			$("#1st").css({"backgroundColor":"black","color":"white"});
+		}
+		if(num == 2){
+			$("#2nd").css({"backgroundColor":"black","color":"white"});
+		}
+		if(num == 3){
+			$("#3rd").css({"backgroundColor":"black","color":"white"});
+		}
+	})
+</script>
  
