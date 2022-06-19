@@ -123,11 +123,5 @@
 		}
 	})
 </script>
-<?php 
-//}
-//else {
-	header ("Location:index.html");
-//}
-?>
  
  
