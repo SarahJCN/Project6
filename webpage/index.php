@@ -8,7 +8,7 @@
 			$dir = "Up";
 		else
 			$dir = "Down";
-		$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','root','');
+		$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
 		$query = 'UPDATE elevatorNetwork 
 				SET currentFloor = :floor,
 				direction = :dir
@@ -22,7 +22,7 @@
 	}
 
 	function get_currentFloor(): int { 
-		try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','root','');}
+		try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 		catch (PDOException $e){echo $e->getMessage();}
 
 			// Query the database to display current floor
@@ -33,7 +33,7 @@
 			return $current_floor;
 	}
 	function get_direction() { 
-		try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','root','');}
+		try { $db = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');}
 		catch (PDOException $e){echo $e->getMessage();}
 
 			// Query the database to display current direction
