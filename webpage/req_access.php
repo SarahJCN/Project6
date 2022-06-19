@@ -1,23 +1,34 @@
 <?php
-$submitted = !empty($_POST);
+	$submitted = !empty($_POST);
+		$fname = $_POST['firstname'];
+		$lname = $_POST['lastname'];
+		$email = $_POST['email'];
+		$url = $_POST['url'];
+		$dob = $_POST['birthday'];
+		if(isset($_POST['fac_or_student']))
+			$fac = $_POST['fac_or_student'];
+		else
+			$fac = "";
+		if(isset($_POST['involvement']))
+			$inv = $_POST['involvement'];
+		else
+			$inv = "";
+		$file = $_POST['file_uploaded'];
+		$com = $_POST['comments'];
+		$op = $_POST['projects_class'];
+		$pass = $_POST['pass'];
+	try 
+	{
+	$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
+		$query = "INSERT INTO user (fname,lname,email,website,dob,request,role,opinion,files,comments,password) values('$fname','$lname','$email','$url','$dob','$fac','$inv','$op','$file','$com','$pass')";
+		if($db1->exec($query)) {
+			header('Location:login.html');
+		}
+		else {
+			echo "dd";
+		}	
+	}
+	catch(PDOException $e) {
+		echo $db1." ".$e->message();
+	}
 ?>
-<!DOCTYPE html>
-<html>
-	<head><title>Request Access: Form Handler Page</title></head>
-	<body>
-		<p>Form submitted? <?php echo (int) $submitted; ?> </p>
-		<p>Your Submitted info is</p>
-		<ul>
-			<li><b>First Name</b>: <?php echo $_POST['firstname']; ?></li>
-			<li><b>Last name</b>: <?php echo $_POST['lastname']; ?></li>
-			<li><b>Email</b>: <?php echo $_POST['email']; ?></li>
-			<li><b>URL</b>: <?php echo $_POST['url']; ?></li>
-			<li><b>Birth date</b>: <?php echo $_POST['birthday']; ?></li>
-			<li><b>Faculty / Student</b>: <?php echo $_POST['fac_or_student']; ?></li>
-			<li><b>Involvement</b>: <?php echo $_POST['involvement']; ?></li>
-			<li><b>Drive car</b>: <?php echo $_POST['drives_car']; ?></li>
-			<li><b>File upload</b>: <?php echo $_POST['file_uploaded']; ?></li>
-			<li><b>Other comments</b>: <?php echo $_POST['comments']; ?></li>
-		</ul>
-	</body>
-</html>
