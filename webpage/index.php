@@ -47,6 +47,9 @@
 	}
 ?>
 
+
+
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -110,8 +113,11 @@
 		</table>		
 	</div>
 	
+	<script>
+		var myAudio = new Audio('js/test.mp3'); 
+		myAudio.play();
+	</script>
 </body>
-	<script type="text/floorsound" src="js/jquery.js"></script>
 </html>
 <script type="text/javascript">
 	$(document).ready(function(){
