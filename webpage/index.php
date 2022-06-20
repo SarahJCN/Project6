@@ -56,60 +56,121 @@
 </head>
 
 <html>
-	<div class="MainC">
-		<h1>Elevator Control(<a href="logout.php"> logout </a>)</h1> 
-		<table width="800px" align="center">
-			<tr align="center" bgcolor="gray">
-				<td style="color:white; font-size:18px">Floors</td>
-				<td style="color:white; font-size:18px">Cuurent Status</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="floors">
-						<div class="box" id="3rd">3rd Floor</div>
-						<div class="box" id="2nd">2nd Floor</div>
-						<div class="box" id="1st">1st Floor</div>
-					</div>
-				</td>
-				<td>
-					<table width="300px">
-						<tr bgcolor="gray" align="center">
-							<td style="color:white; font-size:18px">Current Floor</td>
-							<td style="color:white; font-size:18px">Direction</td>
-							<td style="color:white; font-size:18px">Signal</td>
-						</tr>
-						<tr align="center">
-							<td id="floorNum">
-								<?php 
-									if(isset($_POST['newfloor'])) { 
-										$curFlr = update_elevatorNetwork(1,$_POST['newfloor']);
-										header('Refresh:0; url=index.php');	
-									} 
-									$curFlr = get_currentFloor();
-									echo $curFlr;			
-								?>
-							</td>
-							<td><?php echo get_direction(); ?></td>
-							<td>closed</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>
-					<h2> 	
-						<form action="index.php" method="POST">
-							Request floor #  <br/><input type="number" style="width:150px; height:40px" name="newfloor" max="3" min="1" required />
-							<input type="submit" value="Go"/>
-						</form>
-					</h2>
-				</td>
-			</tr>
-		</table>		
-	</div>
-</html>
-<script type="text/javascript">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 6 landing page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="card">
+            <div class="text-center">
+                <div class="elevetor-control">
+                    <h1>Elevator Control(<a href="logout.php"> logout </a>)</h1> 
+                    <ul class="flex-list">
+                        <li>
+                            <a href="" class="btn">
+                                <i class="fa fa-bell"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="btn">
+                                <i class="fa fa-phone"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="btn">
+                                <i class="fa fa-wifi"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form action="">
+                                <input type="text" class="form-control" placeholder="Enter Floor Number" name="" id="floorNumber">
+                            </form>
+                            <div class="flex btnFlex">
+                                <button class="btn floorBtn floor1">1</button>
+                                <button class="btn floorBtn floor2">2</button>
+                                <button class="btn floorBtn floor3">3</button>
+                            </div>
+                            <button class="btn mt-2 enterBtn">
+                                Enter
+                            </button>
+
+                            <ul class="flex-list mt-2 between">
+                                <li>
+                                    <a href="" class="btn">
+                                        <i class="fa fa-music"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="btn">
+                                        <i class="fa fa-play"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="btn">
+                                        <i class="fa fa-newspaper"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="btn">
+                                        <i class="fa fa-circle"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6">
+                            <form action="">
+                                <input type="text" class="form-control" placeholder="Current Floor" name="" id="">
+                                <input type="text" class="form-control mt-2" placeholder="Time to Desired Destination" name="" id="">
+                            </form>
+                           
+
+                            <ul class="flex-list mt-2">
+                                <li>
+                                    <button class="btn liftBtn">
+                                        <i class="fa fa-angle-right"></i> <span class="line">|</span> <i class="fa fa-angle-left"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn liftBtn">
+                                        <i class="fa fa-angle-left"></i> <span class="line">|</span> <i class="fa fa-angle-right"></i>
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <button class="btn bg-none">
+                                <img src="./images/stop.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.floorBtn').click(function(){
+            $('.floorBtn').removeClass('active')
+            $(this).addClass('active')
+            var num = $(this).text()
+            // console.log(num)
+            $('#floorNumber').val(num)
+        })
+    </script>
+	<script type="text/javascript">
 	$(document).ready(function(){
 		var num = $("#floorNum").html();
 		if(num == 1){
@@ -123,6 +184,9 @@
 		}
 	})
 </script>
+</body>
+</html>
+
 <?php }else{ header("Location:index.html"); } ?>
  
  

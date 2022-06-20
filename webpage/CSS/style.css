@@ -1,0 +1,136 @@
+.wrapper{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.elevetor-control{
+    padding: 15px;
+    background-color: rgba(0,0,0,0.8) !important;
+}
+.text-center{
+    text-align: center !important;
+}
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+h1{
+    font-size: 25px !important;
+    margin-top: 0 !important;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+i{
+    font-size: 25px;
+}
+.btn{
+    color: white !important;
+}
+.flex-list {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+.flex-list li{
+    margin: 0 15px;
+}
+.form-control{
+    width: 100%;
+    height: 45px;
+    border: unset;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+.floorBtn{
+    height: 45px;
+    width: 45px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: black !important;
+    border-radius: 50%;
+    border: 0;
+}
+.btnFlex{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.col-md-6{
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 20px;
+}
+.mt-2{
+    margin-top: 20px !important;
+}
+.enterBtn{
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+    color: black !important;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+.flex-list.mt-2.between {
+	justify-content: space-between !important;
+}
+.mb-0.fs-13 {
+	font-size: 13px;
+	color: white;
+	margin-bottom: 0;
+}
+.btn.liftBtn {
+	font-size: 30px;
+	height: 55px;
+	width: 60px;
+	height: 60px;
+	color: black !important;
+	border-radius: 50%;
+	border: unset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.line {
+	position: er;
+	position: relative;
+	top: -2px;
+}
+.bg-none{
+    background-color: transparent;
+    border: 0;
+}
+img {
+	width: 70px;
+	margin-top: 15px;
+}
+.floorBtn.active{
+    background: greenyellow;
+}
