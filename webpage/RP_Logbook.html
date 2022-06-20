@@ -73,6 +73,7 @@
               <div class="Name">
               <br>
               Working on implementation of Maintenance Remote - elevator extra. <br>
+              <img src="images/STM32-Nucleo-F401RE-Pinout.png" alt="STM32-Nucleo-F401RE-Pinout" title="STM32-Nucleo-F401RE-Pinout" width="200" /> <br>
                     - Circuit created with STM32 and IR receiver sensor. <br>
                     <img src="images/IR_Sensor_Setup.jpg" alt="IR_Sensor_Setup" title="IR_Sensor_Setup" width="200" /> <br>
                     - Sensor tested and receiving +3.3V from Nucleo 64. <br>
@@ -82,6 +83,31 @@
                     
                Updated Weekly Status Report and personal logbook<br>
                Created debrief pdf doc and submitted to assignment dropbox. <br>
+              </div>
+          </p>
+      </div>
+      <div class="commentbox">
+          <h3 class="Header">June 13th, 2022</h3>
+          <h4 class="Header">Week 6</h4>
+          <p> 
+              <div class="Name">
+              <br>
+              Working on implementation of Maintenance Remote - elevator extra. <br>
+              (IR Remote Bit Example)<br>
+              <img src="images/IR_Remote_Bit_Example.png" alt="IR_Remote_Bit_Example" title="IR_Remote_Bit_Example" width="200" /> <br>
+                    - Pin 13 used to read remote signal. <br>
+                    - Data being read from pin 13 and read from the array. <br>
+                         Remote Power Button - Test 1
+                         <img src="images/IR_Remote_Power_Button_Word _View_1.PNG" alt="Power_Test_1" title="Power_Test_2" width="200" /> <br>
+                        Remote Power Button - Test 2
+                         <img src="images/IR_Remote_Power_Button_Word _View_2.PNG" alt="Power_Test_2" title="Power_Test_2" width="200" /> <br>
+                    - Next steps: <br>
+                         --determine high, low, and midpoint of data being sent.<br>
+                         --shift 1's and 0's into array based on high, lowpoints. Continue until all 32bit data is obtained. <br>
+                         --create switch case corresponding code to the button pushed. <br>
+                    
+               Updated personal logbook<br>
+               Created debrief pdf doc and submitted to assignment dropbox. Remote Code included in document.<br>
               </div>
           </p>
       </div>
