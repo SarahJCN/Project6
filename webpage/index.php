@@ -46,6 +46,8 @@
 			return $direction;
 	}
 ?>
+
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,8 +56,7 @@
     <link href="./CSS/style2.css" type="text/css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery.js"></script>
 </head>
-
-<html>
+<body>
 	<div class="MainC">
 		<h1>Elevator Control(<a href="logout.php"> logout </a>)</h1> 
 		<table width="800px" align="center">
@@ -108,6 +109,9 @@
 			</tr>
 		</table>		
 	</div>
+	
+</body>
+	<script type="text/floorsound" src="js/jquery.js"></script>
 </html>
 <script type="text/javascript">
 	$(document).ready(function(){
