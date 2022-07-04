@@ -219,7 +219,7 @@
 						flag = "down";
 					} console.log(flag)
 				})
-			}, 3000)
+			}, 30000)
 		}
 		//subbath mode
 
