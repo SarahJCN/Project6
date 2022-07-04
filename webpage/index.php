@@ -165,8 +165,11 @@
 	</div>
 	
 	<script>
-		var myAudio = new Audio('js/test.mp3'); 
-		myAudio.play();
+		function floor1(){
+			var myAudio = new Audio('js/test.mp3'); 
+			myAudio.play();
+		}
+		floor1();
 	</script>
 </body>
 </html>
@@ -203,17 +206,17 @@
 				}).done(function(data){
 					$("#floorNum").text(data);
 					data = parseInt(data);
-					if(data == 1){ 
+					if(data == 1){ floor1();
 						$("#1st").css({"backgroundColor":"black","color":"white"});
 						$("#2nd").css({"backgroundColor":"white","color":"black"});
 						flag = "up";
 					}
-					if(data == 2){ console.log("2nd")
+					if(data == 2){ floor1();
 						$("#2nd").css({"backgroundColor":"black","color":"white"});
 						$("#1st").css({"backgroundColor":"white","color":"black"});
 						$("#3rd").css({"backgroundColor":"white","color":"black"});
 					}
-					if(data == 3){
+					if(data == 3){ floor1();
 						$("#3rd").css({"backgroundColor":"black","color":"white"});
 						$("#2nd").css({"backgroundColor":"white","color":"black"});
 						flag = "down";
