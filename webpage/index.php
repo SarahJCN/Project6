@@ -224,7 +224,7 @@
 		//subbath mode
 
 		$("#stop").click(function(){
-			location.reload();
+			location.reload(true);
 		})
 
 		var weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
