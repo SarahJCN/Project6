@@ -165,11 +165,8 @@
 	</div>
 	
 	<script>
-		function floor1(){
 			var myAudio = new Audio('js/test.mp3'); 
 			myAudio.play();
-		}
-		floor1();
 	</script>
 </body>
 </html>
@@ -206,23 +203,23 @@
 				}).done(function(data){
 					$("#floorNum").text(data);
 					data = parseInt(data);
-					if(data == 1){ floor1();
+					if(data == 1){ 
 						$("#1st").css({"backgroundColor":"black","color":"white"});
 						$("#2nd").css({"backgroundColor":"white","color":"black"});
 						flag = "up";
 					}
-					if(data == 2){ floor1();
+					if(data == 2){ console.log("2nd")
 						$("#2nd").css({"backgroundColor":"black","color":"white"});
 						$("#1st").css({"backgroundColor":"white","color":"black"});
 						$("#3rd").css({"backgroundColor":"white","color":"black"});
 					}
-					if(data == 3){ floor1();
+					if(data == 3){
 						$("#3rd").css({"backgroundColor":"black","color":"white"});
 						$("#2nd").css({"backgroundColor":"white","color":"black"});
 						flag = "down";
 					} console.log(flag)
 				})
-			}, 9000)
+			}, 12000)
 		}
 		//subbath mode
 
