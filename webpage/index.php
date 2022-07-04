@@ -155,7 +155,7 @@
 							<input type="button" value="2" onclick="getVal(this.value)" /> 
 							<input type="button" value="3" style="margin-bottom: 5px"  onclick="getVal(this.value)" /><br />
 							<input type="submit" value="Enter"/>
-							<input type="button" value="Subbath Mode" id="subbath" />
+							<input type="button" value="Sabbath Mode" id="subbath" />
 							<input type="button" value="Stop" id="stop" />
 						</form>
 					</h2>
