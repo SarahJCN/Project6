@@ -8,7 +8,7 @@
 		$fno--;
 	}
 	
-	$db1 = mysqli_connect("localhost","root","","elevator");
+	$db1 = mysqli_connect("localhost","ese","ese","elevator");
 	$query = "UPDATE elevatornetwork SET currentFloor = '$fno' WHERE nodeID = '1'";
 	mysqli_query($db1, $query) or die(mysqli_error($db1));
 
