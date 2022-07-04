@@ -231,7 +231,7 @@
 
 		var a = new Date();
 		//alert(a.getDay())
-		if(weekday[a.getDay()] == "Monday"){
+		if(weekday[a.getDay()] == "Saturday"){
 			//alert("monday");
 			subbath();
 		}
