@@ -109,7 +109,7 @@
 		<table width="800px" align="center">
 			<tr align="center" bgcolor="gray">
 				<td style="color:white; font-size:18px">Floors</td>
-				<td style="color:white; font-size:18px">Cuurent Status</td>
+				<td style="color:white; font-size:18px">Curent Status</td>
 			</tr>
 			<tr>
 				<td>
@@ -182,7 +182,7 @@
 		if(num == 3){
 			$("#3rd").css({"backgroundColor":"black","color":"white"});
 		}
-		//subbath mode
+		//sabbath mode
 		var flag = "up";
 		$("#subbath").click(function(){
 			subbath();
