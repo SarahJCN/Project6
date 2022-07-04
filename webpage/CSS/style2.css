@@ -7,7 +7,19 @@
 }
 .Mainc input[type="submit"]{
     padding: 10px;
-    width: 80px;
+    width: 120px;
+}
+.Mainc input[type="button"]{
+    padding: 10px;
+    width: 109px;
+}
+.Mainc #subbath{
+    padding: 10px;
+    width: 125px;
+}
+.Mainc #stop{
+    padding: 10px;
+    width: 82px;
 }
 body {
     background: url(../images/background.jpg);
