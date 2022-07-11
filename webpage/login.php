@@ -1,10 +1,11 @@
 <?php
 	$submitted = !empty($_POST);
-
-	try {
+	include "config.php";
+	$db1 = new PDO('mysql:host='.$BDSERVER.';dbname='.$DBNAME,''.$DBUSER.'',''.$DBPASSWORD.'');
+	try { 
 		$email = $_POST['username'];
 		$pass = $_POST['password'];
-	$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
+	
 		$query = "SELECT * from user where email = '$email' and password = '$pass'";
 		$res = $db1->query($query);
 		if($res->rowCount() > 0)

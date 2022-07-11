@@ -7,8 +7,8 @@
 	if($flag == "down" && $fno > 1){
 		$fno--;
 	}
-	
-	$db1 = mysqli_connect("localhost","ese","ese","elevator");
+	include "config.php";
+	$db1 = mysqli_connect("$DBSERVER","$DBUSER","$DBPASSWORD","$DBNAME");
 	$query = "UPDATE elevatorNetwork SET currentFloor = '$fno' WHERE nodeID = '1'";
 	mysqli_query($db1, $query) or die(mysqli_error($db1));
 
