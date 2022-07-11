@@ -1,6 +1,7 @@
 <?php 
 	
-	function update_elevatorNetwork(int $node_ID, int $new_floor): int {include "config.php";
+	function update_elevatorNetwork(int $node_ID, int $new_floor, $q): int {include "config.php";
+		//die($q);
 		$user = $_SESSION['user'];
 		$dir = "";
 		$sig = "";
@@ -13,11 +14,13 @@
 		$db1 = new PDO('mysql:host='.$DBSERVER.';dbname='.$DBNAME,''.$DBUSER.'',''.$DBPASSWORD.'');
 		$query = 'UPDATE elevatorNetwork 
 				SET currentFloor = :floor,
-				otherInfo = :dir
+				otherInfo = :dir,
+				requestedFloor = :flr
 				WHERE nodeID = :id';
 		$statement = $db1->prepare($query);
 		$statement->bindvalue('floor', $new_floor);
 		$statement->bindvalue('dir', $dir);
+		$statement->bindvalue('flr', $q);
 		$statement->bindvalue('id', $node_ID);
 		$statement->execute();
 		//check how many time user visited a floor
@@ -66,6 +69,17 @@
 
 			// Query the database to display current direction
 			$rows = $db->query('SELECT otherInfo FROM elevatorNetwork');
+			foreach ($rows as $row) {
+				$direction = $row[0];
+			}
+			return $direction;
+	}
+	function get_q() { include "config.php";
+		try { $db = new PDO('mysql:host='.$DBSERVER.';dbname='.$DBNAME,''.$DBUSER.'',''.$DBPASSWORD.'');}
+		catch (PDOException $e){echo $e->getMessage();}
+
+			// Query the database to display current direction
+			$rows = $db->query('SELECT requestedFloor FROM elevatorNetwork');
 			foreach ($rows as $row) {
 				$direction = $row[0];
 			}

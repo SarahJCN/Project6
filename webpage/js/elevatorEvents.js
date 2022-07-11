@@ -91,11 +91,13 @@ $(document).ready(function(){
 			$("#door").css({"fontSize":"12px"});
 			$("#door").text("Door is closed");
 		});
+
 //end of document ready
 })
 	function getVal(x){
+		//var vl = document.getElementById("floorNum").innerHTML;
 		document.getElementById("setVal").value = x;
-
+		
 		if( $("#setVal").val() != "" ){
 			var data = $("#setVal").val();
 			$("form").submit();

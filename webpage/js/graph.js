@@ -1,13 +1,13 @@
 const ctx = document.getElementById('histogram').getContext('2d');
 var color = 'green';
-var dt = [];
-var fnum = $("#floorNum").text();
-if(fnum == 1)
-  dt.push(1);
-if(fnum == 2)
-  dt.push(1,2);
-if(fnum == 3)
-  dt.push(1,2,3);
+var dt = [1,2,3];
+// var fnum = $("#floorNum").text();
+// if(fnum == 1)
+//   dt.push(1);
+// if(fnum == 2)
+//   dt.push(1,2);
+// if(fnum == 3)
+//   dt.push(1,2,3);
 const chart = new Chart(ctx, {
   type: 'bar',
   data: {
