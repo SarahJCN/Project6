@@ -100,7 +100,10 @@ $(document).ready(function(){
 		
 		if( $("#setVal").val() != "" ){
 			var data = $("#setVal").val();
-			$("form").submit();
+			
+			setInterval(function(){
+$("form").submit();
+},1000);
 		}
 
 	}

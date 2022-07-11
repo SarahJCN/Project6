@@ -11,7 +11,7 @@
 		if($res->rowCount() > 0)
 		{
 			session_start();
-			$_SESSION['user'] = "yes";
+			$_SESSION['user'] = $email;
 			header('Location:index.php');
 		}else{
 			// echo "<script>alert('')</script>";

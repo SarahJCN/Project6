@@ -1,4 +1,5 @@
 <?php
+include "config.php";
 $submitted = !empty($_POST);
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
@@ -18,7 +19,7 @@ $submitted = !empty($_POST);
 	$op = $_POST['projects_class'];
 	$pass = $_POST['pass'];
 try {
-	$db1 = new PDO('mysql:host=127.0.0.1;dbname=elevator','ese','ese');
+	$db1 = new PDO('mysql:host='.$DBSERVER.';dbname='.$DBNAME,''.$DBUSER.'',''.$DBPASSWORD.'');
 		$query = "INSERT INTO user (fname,lname,email,website,dob,request,role,opinion,files,comments,password) values('$fname','$lname','$email','$url','$dob','$fac','$inv','$op','$file','$com','$pass')";
 		if($db1->exec($query))
 		{
