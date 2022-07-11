@@ -2,7 +2,7 @@
 
 	$DBSERVER = "localhost";
 	$DBNAME = "elevator";
-	$DBUSER = "root";
-	$DBPASSWORD = "";
+	$DBUSER = "ese";
+	$DBPASSWORD = "ese";
 
  ?>
