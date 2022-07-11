@@ -32,19 +32,33 @@
 						<div class="box" id="3rd">3rd Floor</div>
 						<div class="box" id="2nd">2nd Floor</div>
 						<div class="box" id="1st">1st Floor</div>
+						<div style="margin-top: 10px;"> <b>Queue:</b> 
+							<?php 
+
+								$dt = json_decode(get_q());
+								foreach($dt as $dt1){
+									if($dt1 == 1)
+										echo "<br><del>Floor 1</del>";
+									if($dt1 == 2)
+										echo "<br><del>Floor 2</del>";
+									if($dt1 == 3)
+										echo "<br><del>Floor 3</del>";
+								}
+							?>
+								
+							</div>
 					</div>
 				</td>
 				<td>
 					<table width="300px">
 						<tr bgcolor="gray" align="center">
-							<td style="color:white; font-size:18px">Queue</td>
 							<td style="color:white; font-size:18px">Current Floor</td>
 							<td style="color:white; font-size:18px">Direction</td>
 							<td style="color:white; font-size:18px">Signal</td>
 							<td style="color:white; font-size:18px">Visited</td>
 						</tr>
 						<tr align="center">
-							<td>
+							<td id="floorNum">
 								<?php 
 									if(isset($_POST['newfloor'])) { 
 										$q = [];
@@ -68,12 +82,11 @@
 										//echo array_search($rqf, $q);
 											
 									} 
-									echo get_q();
+									
 									$curFlr = get_currentFloor();
-												
+											echo $curFlr;	
 								?>
 							</td>
-							<td id="floorNum"><?php echo $curFlr; ?></td>
 							<td><?php echo get_direction(); ?></td>
 							<td>closed</td>
 							<td><?php  echo get_visited_time($_SESSION['user'], $curFlr); ?> Times </td>
@@ -101,7 +114,8 @@
 					</h2>
 				</td>
 				<td>
-					<canvas id="histogram" width="100" height="100"></canvas>
+					<canvas id="histogram" width="150" height="150"></canvas>
+					<input type="hidden" value="<?php echo $_SESSION['user']; ?>" id="uId">
 				</td>
 			</tr>
 		</table>		
