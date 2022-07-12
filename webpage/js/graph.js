@@ -1,20 +1,23 @@
+$(document).ready(function(){
 const ctx = document.getElementById('histogram').getContext('2d');
 var color = 'green';
-var dt = [1,2,3];
-// var fnum = $("#floorNum").text();
-// if(fnum == 1)
-//   dt.push(1);
-// if(fnum == 2)
-//   dt.push(1,2);
-// if(fnum == 3)
-//   dt.push(1,2,3);
-const chart = new Chart(ctx, {
+
+var user = $("#uId").val();
+//alert(user)
+$.ajax({
+  url: "getflrVisited.php",
+  type : "POST",
+  data: {user:user}
+  
+}).done(function(data){
+  console.log(data)
+  const chart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: dt,
+    labels: [1,2,3],
     datasets: [{
       label: 'Number of Floors',
-      data:dt,
+      data: JSON.parse(data),
       backgroundColor: color,
     }]
   },
@@ -35,10 +38,13 @@ const chart = new Chart(ctx, {
       }],
       yAxes: [{
         ticks: {
-          display: false,
           beginAtZero: true
         }
       }]
     }
   }
 });
+})
+
+
+})
