@@ -42,7 +42,7 @@
 									if($dt1 == 2)
 										echo "<br>Floor 2";
 									if($dt1 == 3)
-										echo "<br>Floor 3<";
+										echo "<br>Floor 3";
 								}
 							?>
 								
