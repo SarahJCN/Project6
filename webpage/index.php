@@ -38,11 +38,11 @@
 								$dt = json_decode(get_q());
 								foreach($dt as $dt1){
 									if($dt1 == 1)
-										echo "<br><del>Floor 1</del>";
+										echo "<br>Floor 1";
 									if($dt1 == 2)
-										echo "<br><del>Floor 2</del>";
+										echo "<br>Floor 2";
 									if($dt1 == 3)
-										echo "<br><del>Floor 3</del>";
+										echo "<br>Floor 3<";
 								}
 							?>
 								
@@ -65,7 +65,7 @@
 										$rqf = $_POST['newfloor'];
 										$qf = $_POST['current_floor'];
 										if($rqf < $qf){
-											for($i = $qf-1; $i >= $rqf; $i--){
+											for($i = $qf; $i >= $rqf; $i--){
 												array_push($q, $i);												
 											}
 											$js = json_encode($q);
