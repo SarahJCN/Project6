@@ -13,13 +13,13 @@
 				<td>
 					<form action="login.php" method="post">
 			<h1>Please log in</h1>
-			<body onload="myFunction()"></body>
+			<h4 style="color:red;" id="logerror"></h4>
 			<script>
-				function myFunction() 
-				{
-				  //alert("Please enter your username and password");
-				}
-				</script>
+				const queryString = window.location.search;
+				const urlParams = new URLSearchParams(queryString);
+				// console.log(urlParams.get('msg'))
+				document.getElementById("logerror").innerHTML = urlParams.get('msg');
+			</script>
 
 			<div>
 				<label for="user" class="text_label">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
