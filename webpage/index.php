@@ -32,18 +32,23 @@
 						<div class="box" id="3rd">3rd Floor</div>
 						<div class="box" id="2nd">2nd Floor</div>
 						<div class="box" id="1st">1st Floor</div>
-						<div style="margin-top: 10px;"> <b>Queue:</b> 
+						<div style="margin-top: 10px;"> <b>Queue:<span id="que"></span></b> 
 							<?php 
 
 								$dt = json_decode(get_q());
-								foreach($dt as $dt1){
-									if($dt1 == 1)
-										echo "<br>Floor 1";
-									if($dt1 == 2)
-										echo "<br>Floor 2";
-									if($dt1 == 3)
-										echo "<br>Floor 3";
-								}
+								echo $dt;
+								// foreach($dt as $dt1){
+								// 	if($dt1 == 1){
+								// 		echo "<br>Floor 1";
+								// 	}
+								// 	if($dt1 == 2){
+								// 		echo "<br>Floor 2";
+								// 	}
+								// 	if($dt1 == 3){
+								// 		echo "<br>Floor 3";
+								// 	}
+
+								// }
 							?>
 								
 							</div>
@@ -61,27 +66,12 @@
 							<td id="floorNum">
 								<?php 
 									if(isset($_POST['newfloor'])) { 
-										$q = [];
-										$rqf = $_POST['newfloor'];
+										$fno = $_POST['newfloor'];
 										$qf = $_POST['current_floor'];
-										if($rqf < $qf){
-											for($i = $qf; $i >= $rqf; $i--){
-												array_push($q, $i);												
-											}
-											$js = json_encode($q);
-											$curFlr = update_elevatorNetwork(1,$rqf, $js);
-												header('Refresh:0; url=index.php');
-										}else{
-											for($i = $qf; $i <= $rqf-1; $i++){
-												array_push($q, $i);	
-											}
-											$js = json_encode($q);
-											$curFlr = update_elevatorNetwork(1,$i, $js);
-											header('Refresh:0; url=index.php');
-										}
-										//echo array_search($rqf, $q);
-											
+										$curFlr = update_elevatorNetwork(1,$fno);
+										
 									} 
+									
 									
 									$curFlr = get_currentFloor();
 											echo $curFlr;	
