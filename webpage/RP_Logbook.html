@@ -2,171 +2,363 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robyn Porter Project VI Logbook</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="CSS/style1.css" type="text/css" rel="stylesheet">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Testing Doc</title>
+		<link href="./CSS/style0.css" type="text/css" rel="stylesheet">
+	
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale">
+	
+		<!-- CSS only -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		<!-- JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </head>
+
 <body>
-<section class="layout">
-     <h2>Week of....</h2> 
-     <div class="commentbox">
-          <h3 class="Header">May 9th, 2022</h3>
-          <h4 class="Header">Week 1</h4>
-     
-          <div class="Name">
-                    Start of Spring 2022 Term. <br>
-                    Downloaded and installed necessary software.<br>
-                    Breifing of ESE Project VI.<br>
-                    Beginning of Phase 1.<br>
-                    Learning and creation of html files/website to keep track of Project VI progress.<br>
-                    Debrief 1.<br>
-          </div>
-     </div>
-
-     <div class="commentbox">
-          <h3 class="Header">May 16th, 2022</h3>
-          <h4 class="Header">Week 2</h4>
-     
-          <div class="Name">
-               Adding MGalle Repo to current project repo. <br>
-               Implement the CAN messaging protocol by properly setting the filters on STM32. <br>
-               Implement Wiring on STM32, push buttons/LED indicators. <br>
-               Able to read CAN messages placed on the CAN bus (using Raspberry Pi) and detect up/down request, floor request, door open/close, location of elevator car. <br>
-               Updated all necessary paperwork (weekly status report, logbooks, gantt chart, etc). <br>
-               No debrief due to holiday Monday.<br>
-          </div>
-     </div>
-
-     <div class="commentbox">
-          <h3 class="Header">May 23rd, 2022</h3>
-          <h4 class="Header">Week 3</h4>
-     
-          <div class="Name">
-               End of Phase 1.<br>
-               Reviewed Rubric for Phase I Technical Debrief and ensured all items are completed by beginning of week 4.<br>
-               Compelted unfinished tasks from week 2.<br>
-               Debrief 2.<br>
-          </div>
-     </div>
-
-     <div class="commentbox">
-          <h3 class="Header">May 30th, 2022</h3>
-          <h4 class="Header">Week 4</h4>
-          <p>
-               <div class="Name">
-                    Beginning of Phase 2.<br>
-                    Documents the detailed design tasks identified in the project plan/gantt chart using appropriate drawings, diagrams, or techniques. <br>
-                    Provides a test plan and evidence to support tasks completed in the Project Plan/Gantt Chart. <br>
-                    Created and added test plan to  website. <br>
-                    Logs (on Project Website) the efforts and results of engineering work for reference and accountability.
-                    Debrief 3.<br>
-               </div>
-          </p>
-     </div>
-
-     <div class="commentbox">
-          <h3 class="Header">June 06th, 2022</h3>
-          <h4 class="Header">Week 5</h4>
-          <p> 
-              <div class="Name">
-              <br>
-              Working on implementation of Maintenance Remote - elevator extra. <br>
-              <img src="images/STM32-Nucleo-F401RE-Pinout.png" alt="STM32-Nucleo-F401RE-Pinout" title="STM32-Nucleo-F401RE-Pinout" width="200" /> <br>
-                    - Circuit created with STM32 and IR receiver sensor. <br>
-                    <img src="images/IR_Sensor_Setup.jpg" alt="IR_Sensor_Setup" title="IR_Sensor_Setup" width="200" /> <br>
-                    - Sensor tested and receiving +3.3V from Nucleo 64. <br>
-                    - Sensor able to read and output remote button push, as seen on oscilloscope picture. <br>
-                    <img src="images/IR_Sensor_Scope.jpg" alt="IR_Sensor_Scope" title="IR_Sensor_Scope" width="200" /> <br>
-                    - Code currently not reading and outputting remote button push. <br>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+            <a href="#" class="navbar-brand">Project 6</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenuthing"> <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navmenuthing">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="weeklystatusreport.html" class="nav-link">Weekly Status</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="project_charter.html" class="nav-link">Project Charter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="test_plan.html" class="nav-link">Test Plan</a>
+                    </li>
                     
-               Updated Weekly Status Report and personal logbook<br>
-               Created debrief pdf doc and submitted to assignment dropbox. <br>
-              </div>
-          </p>
-      </div>
-      <div class="commentbox">
-          <h3 class="Header">June 13th, 2022</h3>
-          <h4 class="Header">Week 6</h4>
-          <p> 
-              <div class="Name">
-              <br>
-              Working on implementation of Maintenance Remote - elevator extra. <br>
-              (IR Remote Bit Example)<br>
-              <img src="images/IR_Remote_Bit_Example.png" alt="IR_Remote_Bit_Example" title="IR_Remote_Bit_Example" width="400" /> <br>
-                    - Pin 13 used to read remote signal. <br>
-                    - Data being read from pin 13 and read from the array. <br>
-                         Remote Power Button - Test 1<br>
-                         <img src="images/IR_Remote_Power_Button_Word _View_1.PNG" alt="Power_Test_1" title="Power_Test_2" width="500" /> <br>
-                        Remote Power Button - Test 2<br>
-                         <img src="images/IR_Remote_Power_Button_Word _View_2.PNG" alt="Power_Test_2" title="Power_Test_2" width="500" /> <br>
-                    - Next steps: <br>
-                         --determine high, low, and midpoint of data being sent.<br>
-                         --shift 1's and 0's into array based on high, lowpoints. Continue until all 32bit data is obtained. <br>
-                         --create switch case corresponding code to the button pushed. <br>
-                    Code: (Remote code highlighted in orange)<br>
-                    <iframe src="https://docs.google.com/document/d/1hlc5-uDmloUXoF6SBV-LrkTDUvudIAp9uVKXOJylw90/edit" style="height:500px;width:700px;" title="IR_Remote_Code_Week6"> 
-                    </iframe> 
-               Updated personal logbook<br>
-               Created debrief pdf doc and submitted to assignment dropbox. Remote Code included in document.<br>
-              </div>
-          </p>
-      </div>
-      <div class="commentbox">
-          <h3 class="Header">June 20th, 2022</h3>
-          <h4 class="Header">Week 7</h4>
-          <p> 
-              <div class="Name">
-              <br>
-              Completing work of Maintenance Remote Code - elevator extra. <br>  
-                    - Determine high, low, and midpoint of data being sent.<br>
-                    - Shift 1's and 0's into array based on high, and low data. Continue until all 32bit data is obtained. <br>
-                    - Create switch case corresponding code to the button pushed. <br>
-                    Remote Power Button Decode Key - Test 1<br>
-                    <img src="images/IR_Remote_Bit_Decode_Power.png" alt="IR_Remote_Bit_Decode_Power" title="IR_Remote_Bit_Decode_Power" width="400" /> <br>
-                    <br>
-                    Decode Keys:<br>
-                    Note: currently only using buttons 1, 2, and 3 in order to correspond to their respective floors. <br>
-                    <iframe src="https://docs.google.com/spreadsheets/d/1fl7-5hYSR4mCtziwdrQiAbuPcLHGCE_LEp6397Au-Eg/edit#gid=0" style="height:500px;width:700px;" title="IR_Remote_Code_Week6"> 
-                    </iframe> 
-                    <br>
-                    Code: (Remote code highlighted in orange)<br>
-                    <iframe src="https://docs.google.com/document/d/1oguvSe2BC63FachPSKxXV8kisEcoqiXqt4iniLCavJI/edit" style="height:500px;width:700px;" title="IR_Remote_Code_Week6"> 
-                    </iframe> 
-                    
-               Updated personal logbook<br>
-               Created debrief pdf doc and submitted to assignment dropbox. Remote Code included in document.<br>
-              </div>
-          </p>
-      </div>
-      <div class="commentbox">
-          <h3 class="Header">June 27th, 2022</h3>
-          <h4 class="Header">Week 8</h4>
-          <p> 
-              <div class="Name">
-              <br>
-              Student Success Week <br>  
-          </p>
-      </div>
-      <div class="commentbox">
-          <h3 class="Header">July 4th, 2022</h3>
-          <h4 class="Header">Week 9</h4>
-          <p> 
-              <div class="Name">
-              <br>
-              Debugging Maintenance Remote Code - elevator extra. <br>  
-                    - Determined that the decoding array clears itself for some reason.<br>
-                    - Need to narrow down where exactly. <br>
-               This Week:
-                    -Implementation of remote code with elevator. <br>
-                    
-               Updated personal logbook<br>
-               Created debrief pdf doc and submitted to assignment dropbox.<br>
-              </div>
-          </p>
-      </div>
- </section>
+                </ul>
+            </div>
+        </div> 
+    </nav>
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Week 1 
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="card">
+                            <h5 class="card-header">
+                                May 9th, 2022
+                            </h5>
+                            <div class="card-body">
+                                <h5 class="card-title">Beginning of Phase 1</h5>
+                              <p class="card-text">
+                                •	Start of Spring 2022 Term. <br>
+                                •	Downloaded and installed necessary software.<br>
+                                •	Breifing of ESE Project VI.<br>
+                                •	Beginning of Phase 1.<br>
+                                •	Learning and creation of html files/website to keep track of Project VI progress.<br>
+                                •	Debrief 1.<br>
+                              </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                    Week 2
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <div class="card mb-3" style="max-width: 540px;">
+                          <div class="card">
+                              <h5 class="card-header">
+                                May 16th, 2022
+                              </h5>
+                              <div class="card-body">
+                                <p class="card-text">
+                                •	Adding MGalle Repo to current project repo. <br>
+                                •	Implement the CAN messaging protocol by properly setting the filters on STM32. <br>
+                                •	Implement Wiring on STM32, push buttons/LED indicators. <br>
+                                •	Able to read CAN messages placed on the CAN bus (using Raspberry Pi) and detect up/down request, floor request, door open/close, location of elevator car. <br>
+                                •	Updated all necessary paperwork (weekly status report, logbooks, gantt chart, etc). <br>
+                                •	No debrief due to holiday Monday.<br>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                    Week 3
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <div class="card mb-3" style="max-width: 540px;">
+                          <div class="card">
+                              <h5 class="card-header">
+                                May 23rd, 2022
+                              </h5>
+                              <div class="card-body">
+                                <p class="card-text">
+                                •	End of Phase 1.<br>
+                                •	Reviewed Rubric for Phase I Technical Debrief and ensured all items are completed by beginning of week 4.<br>
+                                •	Compelted unfinished tasks from week 2.<br>
+                                •	Debrief 2.<br>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading4">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapseOne">
+                    Week 4
+                </button>
+                </h2>
+                <div id="collapse4" class="accordion-collapse collapse show" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="card">
+                            <h5 class="card-header">
+                                May 30th, 2022
+                            </h5>
+                            <div class="card-body">
+                                <h5 class="card-title">Beginning of Phase 2</h5>
+                                <p class="card-text">
+                                •	Documents the detailed design tasks identified in the project plan/gantt chart using appropriate drawings, diagrams, or techniques. <br>
+                                •	Provides a test plan and evidence to support tasks completed in the Project Plan/Gantt Chart. <br>
+                                •	Created and added test plan to  website. <br>
+                                •	Logs (on Project Website) the efforts and results of engineering work for reference and accountability.
+                                •	Debrief 3.<br>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading5">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapseOne">
+                    Week 5
+                  </button>
+                </h2>
+                <div id="collapse5" class="accordion-collapse collapse show" aria-labelledby="heading5" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <div class="card mb-3" style="max-width: 540px;">
+                          <div class="card">
+                              <h5 class="card-header">
+                                June 06th, 2022
+                              </h5>
+                              <div class="card-body">
+                                <p class="card-text">
+                                •	Working on implementation of Maintenance Remote - elevator extra. <br>
+                                <img src="images/STM32-Nucleo-F401RE-Pinout.png" alt="STM32-Nucleo-F401RE-Pinout" title="STM32-Nucleo-F401RE-Pinout" width="200" /> <br>
+                                        - Circuit created with STM32 and IR receiver sensor. <br>
+                                        <img src="images/IR_Sensor_Setup.jpg" alt="IR_Sensor_Setup" title="IR_Sensor_Setup" width="200" /> <br>
+                                        - Sensor tested and receiving +3.3V from Nucleo 64. <br>
+                                        - Sensor able to read and output remote button push, as seen on oscilloscope picture. <br>
+                                        <img src="images/IR_Sensor_Scope.jpg" alt="IR_Sensor_Scope" title="IR_Sensor_Scope" width="200" /> <br>
+                                        - Code currently not reading and outputting remote button push. <br>
+                                        
+                                •	Updated Weekly Status Report and personal logbook<br>
+                                •	Created debrief pdf doc and submitted to assignment dropbox. <br>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading6">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapseOne">
+                    Week 6
+                    </button>
+                </h2>
+                <div id="collapse6" class="accordion-collapse collapse show" aria-labelledby="heading6" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card">
+                                <h5 class="card-header">
+                                    June 13th, 2022
+                                </h5>
+                                <div class="card-body">
+                                <p class="card-text">
+                                •	Working on implementation of Maintenance Remote - elevator extra. <br>
+                                (IR Remote Bit Example)<br>
+                                <img src="images/IR_Remote_Bit_Example.png" alt="IR_Remote_Bit_Example" title="IR_Remote_Bit_Example" width="400" /> <br>
+                                        - Pin 13 used to read remote signal. <br>
+                                        - Data being read from pin 13 and read from the array. <br>
+                                            Remote Power Button - Test 1<br>
+                                            <img src="images/IR_Remote_Power_Button_Word _View_1.PNG" alt="Power_Test_1" title="Power_Test_2" width="500" /> <br>
+                                            Remote Power Button - Test 2<br>
+                                            <img src="images/IR_Remote_Power_Button_Word _View_2.PNG" alt="Power_Test_2" title="Power_Test_2" width="500" /> <br>
+                                        - Next steps: <br>
+                                            --determine high, low, and midpoint of data being sent.<br>
+                                            --shift 1's and 0's into array based on high, lowpoints. Continue until all 32bit data is obtained. <br>
+                                            --create switch case corresponding code to the button pushed. <br>
+                                        Code: (Remote code highlighted in orange)<br>
+                                        <iframe src="https://docs.google.com/document/d/1hlc5-uDmloUXoF6SBV-LrkTDUvudIAp9uVKXOJylw90/edit" style="height:500px;width:700px;" title="IR_Remote_Code_Week6"> 
+                                        </iframe> 
+                                •	Updated personal logbook<br>
+                                •	Created debrief pdf doc and submitted to assignment dropbox. Remote Code included in document.<br>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading7">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapseOne">
+                    Week 7
+                    </button>
+                </h2>
+                <div id="collapse7" class="accordion-collapse collapse show" aria-labelledby="heading7" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card">
+                                <h5 class="card-header">
+                                    June 20th, 2022
+                                </h5>
+                                <div class="card-body">
+                                <p class="card-text">
+                                    •	Completing work of Maintenance Remote Code - elevator extra. <br>  
+                                        - Determine high, low, and midpoint of data being sent.<br>
+                                        - Shift 1's and 0's into array based on high, and low data. Continue until all 32bit data is obtained. <br>
+                                        - Create switch case corresponding code to the button pushed. <br>
+                                •	Remote Power Button Decode Key - Test 1<br>
+                                <img src="images/IR_Remote_Bit_Decode_Power.png" alt="IR_Remote_Bit_Decode_Power" title="IR_Remote_Bit_Decode_Power" width="400" /> <br>
+                                <br>
+                                Decode Keys:<br>
+                                Note: currently only using buttons 1, 2, and 3 in order to correspond to their respective floors. <br>
+                                <iframe src="https://docs.google.com/spreadsheets/d/1fl7-5hYSR4mCtziwdrQiAbuPcLHGCE_LEp6397Au-Eg/edit#gid=0" style="height:500px;width:700px;" title="IR_Remote_Code_Week6"> 
+                                </iframe> 
+                                <br>
+                                Code: (Remote code highlighted in orange)<br>
+                                <iframe src="https://docs.google.com/document/d/1oguvSe2BC63FachPSKxXV8kisEcoqiXqt4iniLCavJI/edit" style="height:500px;width:700px;" title="IR_Remote_Code_Week6"> 
+                                </iframe> 
+                                    
+                                •	Updated personal logbook<br>
+                                •	Created debrief pdf doc and submitted to assignment dropbox. Remote Code included in document.<br>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading8">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapseOne">
+                    Week 8
+                    </button>
+                </h2>
+                <div id="collapse8" class="accordion-collapse collapse show" aria-labelledby="heading8" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card">
+                                <h5 class="card-header">
+                                    June 27th, 2022
+                                </h5>
+                                <div class="card-body">
+                                <p class="card-text">
+                                Student Success Week <br>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading9">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapseOne">
+                    Week 9
+                    </button>
+                </h2>
+                <div id="collapse9" class="accordion-collapse collapse show" aria-labelledby="heading9" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card">
+                                <h5 class="card-header">
+                                    July 4th, 2022
+                                </h5>
+                                <div class="card-body">
+                                <p class="card-text">
+                                •	Debugging Maintenance Remote Code - elevator extra. <br>  
+                                    - Determined that the decoding array clears itself for some reason.<br>
+                                    - Need to narrow down where exactly. <br>
+                                •	This Week:
+                                    -Implementation of remote code with elevator. <br>
+                                    
+                                •	Updated personal logbook<br>
+                                •	Created debrief pdf doc and submitted to assignment dropbox.<br>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading9">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="true" aria-controls="collapseOne">
+                    Week 10
+                    </button>
+                </h2>
+                <div id="collapse10" class="accordion-collapse collapse show" aria-labelledby="heading10" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card">
+                                <h5 class="card-header">
+                                    July 11th, 2022
+                                </h5>
+                                <div class="card-body">
+                                <p class="card-text">
+                                   •    Implementation of remote code with elevator. <br>
+                                        -Debugging <br>
+                                   •    Reformatting website pages <br>
+                                        -Personal logbook <br>
+                                        -Chris's logbook <br>
+                                   
+                                   •	Updated personal logbook<br>
+                                   •	Created debrief pdf doc and submitted to assignment dropbox.<br>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
       
+
+    
 </body>
 </html>
