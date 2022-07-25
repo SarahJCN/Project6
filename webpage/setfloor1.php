@@ -7,8 +7,9 @@
 	$query = "UPDATE elevatorNetwork SET currentFloor = '$fno', otherInfo = '$flag' WHERE nodeID = '1'";
 	mysqli_query($db1, $query) or die(mysqli_error($db1));
 
-		$qry = "SELECT currentFloor FROM elevatorNetwork where nodeID = 1";
+		$qry = "SELECT currentFloor,otherInfo FROM elevatorNetwork where nodeID = 1";
 		$data = mysqli_query($db1, $qry) or die(mysqli_error($db1));
 		$row = mysqli_fetch_array($data);
-		echo $row["currentFloor"];
+		$arr = ["floor"=>$row["currentFloor"],"dir"=>$row["otherInfo"]];
+	echo json_encode($arr);
  ?>

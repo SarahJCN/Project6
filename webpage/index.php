@@ -32,23 +32,11 @@
 						<div class="box" id="3rd">3rd Floor</div>
 						<div class="box" id="2nd">2nd Floor</div>
 						<div class="box" id="1st">1st Floor</div>
-						<div style="margin-top: 10px;"> <b>Queue:<span id="que"></span></b> 
+						<div style="margin-top: 10px;"> <b>Queue: </b> <span id="que"></span>
 							<?php 
 
 								$dt = json_decode(get_q());
 								echo $dt;
-								// foreach($dt as $dt1){
-								// 	if($dt1 == 1){
-								// 		echo "<br>Floor 1";
-								// 	}
-								// 	if($dt1 == 2){
-								// 		echo "<br>Floor 2";
-								// 	}
-								// 	if($dt1 == 3){
-								// 		echo "<br>Floor 3";
-								// 	}
-
-								// }
 							?>
 								
 							</div>
@@ -69,15 +57,12 @@
 										$fno = $_POST['newfloor'];
 										$qf = $_POST['current_floor'];
 										$curFlr = update_elevatorNetwork(1,$fno);
-										
 									} 
-									
-									
 									$curFlr = get_currentFloor();
-											echo $curFlr;	
+									echo $curFlr;	
 								?>
 							</td>
-							<td><?php echo get_direction(); ?></td>
+							<td id="dir"><?php echo get_direction(); ?></td>
 							<td>closed</td>
 							<td><?php  echo get_visited_time($_SESSION['user'], $curFlr); ?> Times </td>
 						</tr>
