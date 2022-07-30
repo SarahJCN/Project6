@@ -77,9 +77,9 @@
 							<span id="door"></span><i class="fa fa-bell myBell"></i><br>
 							<input type="hidden" name="current_floor" id="setcurFloor" value="<?php echo $curFlr; ?>">
 							<input type="text" name="newfloor" max="3" min="1" required placeholder="enter floor number" id="setVal" readonly /><br>
-							<input type="button" value="1" onclick="getVal(this.value)" class="setMargin" id="fl1" />
-							<input type="button" value="2" onclick="getVal(this.value)" class="setMargin" id="fl2" /> 
-							<input type="button" value="3" onclick="getVal(this.value)" class="setMargin" id="fl3" /><br />
+							<input type="button" value="1" class="setMargin" id="fl1" />
+							<input type="button" value="2" class="setMargin" id="fl2" /> 
+							<input type="button" value="3" class="setMargin" id="fl3" /><br />
 							<input type="button" value="<|>" class="setMargin" id="close"/>
 							<input type="button" value=">|<" class="setMargin" id="open"/> <br>
 							<!-- <input type="submit" value="Enter"/> -->
