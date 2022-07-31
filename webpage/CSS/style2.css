@@ -117,3 +117,27 @@ body {
     transform: rotate(0deg);
   }
 }
+
+.doorContainer{
+    border:  2px solid black;
+    width: 205px;
+    height:205px;
+    padding: 2px;
+}
+.doorContainer .door1,.door2{
+    width: 99px;
+    height: 99px;
+    height: 200px;
+    background-color: gray;
+    display: inline-block;
+}
+.floors #box{
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    color:  red;
+    margin-bottom: 2px;
+    font-size: 22px;
+    font-weight: bold;
+}

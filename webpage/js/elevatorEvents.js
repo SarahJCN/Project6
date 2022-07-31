@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	$("#box").text($("#floorNum").text());
 		$("#subbath").click(function(){
 			$("#subbath").css({"backgroundColor":"green","color":"white","color":"white"});
 		});
@@ -76,7 +76,7 @@ $(document).ready(function(){
 
 		var a = new Date();
 		//alert(a.getDay())
-		if(weekday[a.getDay()] == "Saturday"){
+		if(weekday[a.getDay()] == "Monday"){
 			//alert("monday");
 			subbath();
 		}
@@ -100,86 +100,69 @@ $(document).ready(function(){
 
 function ajaxCol(fno, flag){
 	$.ajax({
-					url: "setfloor1.php",
-					method: 'post',
-					data: {fno:fno,flag:flag},
-				}).done(function(data){ var dt = JSON.parse(data);
-					// console.log("data="+dt['floor'])
-					$("#floorNum").text(dt['floor']);
-					$("#dir").text(dt['dir']);
-					data = parseInt(dt['floor']);
-					if(data == 1){ sound1();
-
-						$("#fl1").css({"backgroundColor":"green","color":"white"});
-						$("#fl2").css({"backgroundColor":"#F0F0F0","color":"black"});
-						$("#fl3").css({"backgroundColor":"#F0F0F0","color":"black"});
-
-						$("#1st").css({"backgroundColor":"black","color":"white"});
-						$("#2nd").css({"backgroundColor":"white","color":"black"});
-						// $("#que").text("Floor 1");
-					}
-					if(data == 2){ sound2();
-
-						$("#fl2").css({"backgroundColor":"green","color":"white"});
-						$("#fl1").css({"backgroundColor":"#F0F0F0","color":"black"});
-						$("#fl3").css({"backgroundColor":"#F0F0F0","color":"black"});
-
-						$("#2nd").css({"backgroundColor":"black","color":"white"});
-						$("#1st").css({"backgroundColor":"white","color":"black"});
-						$("#3rd").css({"backgroundColor":"white","color":"black"});
-						// $("#que").text("Floor 3");
-					}
-					if(data == 3){ sound3();
-						$("#fl3").css({"backgroundColor":"green","color":"white"});
-						$("#fl2").css({"backgroundColor":"#F0F0F0","color":"black"});
-						$("#fl1").css({"backgroundColor":"#F0F0F0","color":"black"});
-						
-						$("#3rd").css({"backgroundColor":"black","color":"white"});
-						$("#2nd").css({"backgroundColor":"white","color":"black"});
-						// $("#que").text("Floor 3");
-					}
-				});//ajax end
+		url: "setfloor1.php",
+		method: 'post',
+		data: {fno:fno,flag:flag},
+	}).done(function(data){ var dt = JSON.parse(data);
+		// console.log("data="+dt['floor'])
+		$("#floorNum").text(dt['floor']);
+		$("#dir").text(dt['dir']);
+		data = parseInt(dt['floor']);
+		if(data == 1){ 
+			setTimeout(function(){ sound1();
+				$("#fl1").css({"backgroundColor":"green","color":"white"});
+				$("#fl2").css({"backgroundColor":"#F0F0F0","color":"black"});
+				$("#fl3").css({"backgroundColor":"#F0F0F0","color":"black"});
+			},5000);
+		}
+		if(data == 2){ 
+			setTimeout(function(){ sound2();
+				$("#fl2").css({"backgroundColor":"green","color":"white"});
+				$("#fl1").css({"backgroundColor":"#F0F0F0","color":"black"});
+				$("#fl3").css({"backgroundColor":"#F0F0F0","color":"black"});
+			},5000);
+		}
+		if(data == 3){ 
+			setTimeout(function(){ sound3();
+				$("#fl3").css({"backgroundColor":"green","color":"white"});
+				$("#fl2").css({"backgroundColor":"#F0F0F0","color":"black"});
+				$("#fl1").css({"backgroundColor":"#F0F0F0","color":"black"});
+			},5000);
+		}
+	});//ajax end
 }
 var q = new Array();
 function exDB(val){
 	var curFlor, reqFlor, dir, strt, end ;
 	curFlor = parseInt($("#floorNum").text());
 	reqFlor = parseInt(val);
-	if(reqFlor < curFlor){
+	if(curFlor != reqFlor){
 		q.push(reqFlor)
-	$("#que").text(q.toString());
-		for(var j = 0; j <= q.length-1; j++){
-			(function(index) { 
-		        setTimeout(function() {
-		        	if(q.length != 0)
-		        		ajaxCol(q[index-1],"Down");
-		        	var itemtoRemove = q[index-1];
-					q.splice($.inArray(itemtoRemove, q), 1);
-				    $("#que").text(q.toString());
+		$("#que").text(q.toString());
+		task();
+	}
+}
 
-		        }, (index)*3000);
-
-
-		    })(j+1);
-		    
-		}
-	}else{
-		q.push(reqFlor)
-	$("#que").text(q.toString());
-		for(var j = 0; j <= q.length-1; j++){
-			(function(index) { 
-		        setTimeout(function() {
-		        	if(q.length != 0)
-		        		ajaxCol(q[index-1],"Up");
-		        	var itemtoRemove = q[index-1];
-					q.splice($.inArray(itemtoRemove, q), 1);
-				    $("#que").text(q.toString());
-
-		        }, (index)*3000);
-
-
-		    })(j+1);
-		    
-		}
-	}//end of else
+function openDoor(){
+	$(".door1").animate({"width":"5px"},2000);
+	$(".door2").animate({"width":"5px"},2000);
+}
+function closeDoor(){
+	$(".door1").animate({"width":"98px"},2000);
+	$(".door2").animate({"width":"98px"},2000);
+}
+ 
+var i = 0, j = 1;
+function task() {
+	
+  setTimeout(function() {
+      if(i <= q.length-1 ){ console.log("q = "+q[i]+" length = "+q.length+" i = "+i+" j = "+j)
+    	ajaxCol(q[i],"Up");
+    	var itemtoRemove = q[i];
+    	setTimeout(function(){ $("#box").text(itemtoRemove); openDoor(); },j*4000);
+    	setTimeout(function(){ $("#box").text(itemtoRemove); closeDoor();},j*4000);
+    	setTimeout(function(){ q.splice($.inArray(itemtoRemove, q), 1); $("#que").text(q.toString());},j*4000);
+	} j++; i++;
+  }, j*2000);
+  i = 0, j = 1;
 }

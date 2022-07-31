@@ -27,11 +27,13 @@
 				<td style="color:white; font-size:18px">Curent Status</td>
 			</tr>
 			<tr>
-				<td>
+				<td align="center">
 					<div class="floors">
-						<div class="box" id="3rd">3rd Floor</div>
-						<div class="box" id="2nd">2nd Floor</div>
-						<div class="box" id="1st">1st Floor</div>
+						<div id="box"></div>
+						<div class="doorContainer">
+							<div class="door1"></div>
+							<div class="door2"></div>
+						</div>
 						<div style="margin-top: 10px;"> <b>Queue: </b> <span id="que"></span>
 							<?php 
 
