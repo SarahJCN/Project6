@@ -108,48 +108,27 @@ function ajaxCol(fno, flag){
 		$("#floorNum").text(dt['floor']);
 		$("#dir").text(dt['dir']);
 		data = parseInt(dt['floor']);
-		if(data == 1){ 
-			setTimeout(function(){ sound1();
-				$("#fl1").css({"backgroundColor":"green","color":"white"});
-				$("#fl2").css({"backgroundColor":"#F0F0F0","color":"black"});
-				$("#fl3").css({"backgroundColor":"#F0F0F0","color":"black"});
-			},5000);
-		}
-		if(data == 2){ 
-			setTimeout(function(){ sound2();
-				$("#fl2").css({"backgroundColor":"green","color":"white"});
-				$("#fl1").css({"backgroundColor":"#F0F0F0","color":"black"});
-				$("#fl3").css({"backgroundColor":"#F0F0F0","color":"black"});
-			},5000);
-		}
-		if(data == 3){ 
-			setTimeout(function(){ sound3();
-				$("#fl3").css({"backgroundColor":"green","color":"white"});
-				$("#fl2").css({"backgroundColor":"#F0F0F0","color":"black"});
-				$("#fl1").css({"backgroundColor":"#F0F0F0","color":"black"});
-			},5000);
-		}
 	});//ajax end
 }
 var q = new Array();
-function exDB(val){
+function exDB(val){ 
 	var curFlor, reqFlor, dir, strt, end ;
 	curFlor = parseInt($("#floorNum").text());
 	reqFlor = parseInt(val);
 	if(curFlor != reqFlor){
-		if(curFlor == 1 && reqFlor == 3){
-			for (var i = 0; i < reqFlor; i++) {
-				q.push(curFlor)
+		if(curFlor == 1 && reqFlor == 3 && q.length == 0){
+			for (var i = 1; i < reqFlor; i++) {
+				q.push(++curFlor)
 				$("#que").text(q.toString());
 				task();
-				curFlor++;
+				// curFlor++;
 			}
-		}else if(curFlor == 3 && reqFlor == 1){
-			for (var i = curFlor; i > 0; i--) {
-				q.push(curFlor)
+		}else if(curFlor == 3 && reqFlor == 1 && q.length == 0){
+			for (var i = curFlor; i > 1; i--) {
+				q.push(--curFlor)
 				$("#que").text(q.toString());
 				task();
-				curFlor--;
+				// curFlor--;
 			}
 		}else{
 			q.push(reqFlor)
@@ -161,25 +140,75 @@ function exDB(val){
 }
 
 function openDoor(){
-	$(".door1").animate({"width":"0px"},4000);
-	$(".door2").animate({"width":"0px"},4000);
+	$(".door1").animate({"width":"0px"},2000);
+	$(".door2").animate({"width":"0px"},2000);
 }
 function closeDoor(){
-	$(".door1").animate({"width":"98px"},4000);
-	$(".door2").animate({"width":"98px"},4000);
+	$(".door1").animate({"width":"98px"},2000);
+	$(".door2").animate({"width":"98px"},2000);
 }
  
 var i = 0, j = 1;
 function task() {
-	
   setTimeout(function() {
       if(i <= q.length-1 ){ //console.log("q = "+q[i]+" length = "+q.length+" i = "+i+" j = "+j)
+      	
     	ajaxCol(q[i],"Up");
     	var itemtoRemove = q[i];
-    	setTimeout(function(){ $("#box").text(itemtoRemove); openDoor(); },j*4000);
-    	setTimeout(function(){ $("#box").text(itemtoRemove); closeDoor();},j*4000);
-    	setTimeout(function(){ q.splice($.inArray(itemtoRemove, q), 1); $("#que").text(q.toString());},j*4000);
+    	setTimeout(function(){ $("#box").text(itemtoRemove); },j*6000);
+    	setTimeout(function(){ 
+    		if(itemtoRemove == 1){ 
+			 sound1();
+				$("#fl1").css({"backgroundColor":"green","color":"white"});
+				$("#fl2").css({"backgroundColor":"#F0F0F0","color":"black"});
+				$("#fl3").css({"backgroundColor":"#F0F0F0","color":"black"});
+		}
+		if(itemtoRemove == 2){ 
+			// setTimeout(function(){ 
+				sound2();
+				$("#fl2").css({"backgroundColor":"green","color":"white"});
+				$("#fl1").css({"backgroundColor":"#F0F0F0","color":"black"});
+				$("#fl3").css({"backgroundColor":"#F0F0F0","color":"black"});
+			// },5000);
+		}
+		if(itemtoRemove == 3){ 
+			// setTimeout(function(){ 
+				sound3();
+				$("#fl3").css({"backgroundColor":"green","color":"white"});
+				$("#fl2").css({"backgroundColor":"#F0F0F0","color":"black"});
+				$("#fl1").css({"backgroundColor":"#F0F0F0","color":"black"});
+			// },5000);
+		}
+    	 },j*6000);
+    	setTimeout(function(){ q.splice($.inArray(itemtoRemove, q), 1); $("#que").text(q.toString());openDoor();closeDoor();},j*6000);
+			
 	} j++; i++;
   }, j*4000); //end of time out
   i = 0, j = 1;
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
