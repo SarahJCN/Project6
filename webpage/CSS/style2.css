@@ -125,11 +125,22 @@ body {
     padding: 2px;
 }
 .doorContainer .door1,.door2{
-    width: 99px;
+    width: 98px;
     height: 99px;
-    height: 200px;
+    height: 205px;
     background-color: gray;
-    display: inline-block;
+    /*display: inline-block;*/
+    float: left;
+}
+.doorContainer .door2{
+    width: 98px;
+    height: 205px;
+    background-color: gray;
+    /*display: inline-block;*/
+    float: right;
+}
+.doorContainer .door1,.door2{
+    border-right: 1px solid gray;
 }
 .floors #box{
     width: 80px;

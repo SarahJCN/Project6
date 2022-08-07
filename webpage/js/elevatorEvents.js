@@ -137,32 +137,49 @@ function exDB(val){
 	curFlor = parseInt($("#floorNum").text());
 	reqFlor = parseInt(val);
 	if(curFlor != reqFlor){
-		q.push(reqFlor)
-		$("#que").text(q.toString());
-		task();
+		if(curFlor == 1 && reqFlor == 3){
+			for (var i = 0; i < reqFlor; i++) {
+				q.push(curFlor)
+				$("#que").text(q.toString());
+				task();
+				curFlor++;
+			}
+		}else if(curFlor == 3 && reqFlor == 1){
+			for (var i = curFlor; i > 0; i--) {
+				q.push(curFlor)
+				$("#que").text(q.toString());
+				task();
+				curFlor--;
+			}
+		}else{
+			q.push(reqFlor)
+			$("#que").text(q.toString());
+			task();
+		}
+		
 	}
 }
 
 function openDoor(){
-	$(".door1").animate({"width":"5px"},2000);
-	$(".door2").animate({"width":"5px"},2000);
+	$(".door1").animate({"width":"0px"},4000);
+	$(".door2").animate({"width":"0px"},4000);
 }
 function closeDoor(){
-	$(".door1").animate({"width":"98px"},2000);
-	$(".door2").animate({"width":"98px"},2000);
+	$(".door1").animate({"width":"98px"},4000);
+	$(".door2").animate({"width":"98px"},4000);
 }
  
 var i = 0, j = 1;
 function task() {
 	
   setTimeout(function() {
-      if(i <= q.length-1 ){ console.log("q = "+q[i]+" length = "+q.length+" i = "+i+" j = "+j)
+      if(i <= q.length-1 ){ //console.log("q = "+q[i]+" length = "+q.length+" i = "+i+" j = "+j)
     	ajaxCol(q[i],"Up");
     	var itemtoRemove = q[i];
     	setTimeout(function(){ $("#box").text(itemtoRemove); openDoor(); },j*4000);
     	setTimeout(function(){ $("#box").text(itemtoRemove); closeDoor();},j*4000);
     	setTimeout(function(){ q.splice($.inArray(itemtoRemove, q), 1); $("#que").text(q.toString());},j*4000);
 	} j++; i++;
-  }, j*2000);
+  }, j*4000); //end of time out
   i = 0, j = 1;
 }
