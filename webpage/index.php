@@ -16,6 +16,7 @@
     <script type="text/javascript" src="js/jquery.js"></script>
    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 </head>
 <body>
 	
@@ -25,6 +26,7 @@
 			<tr align="center" bgcolor="gray">
 				<td style="color:white; font-size:18px">Floors</td>
 				<td style="color:white; font-size:18px">Curent Status</td>
+				<td style="color:white; font-size:18px">Have Trouble?</td>
 			</tr>
 			<tr>
 				<td align="center">
@@ -70,6 +72,7 @@
 						</tr>
 					</table>
 				</td>
+				<td align="center"><a href="javascript:void(0)"  id="myBtn">Chat Now</a></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -97,11 +100,32 @@
 			</tr>
 		</table>		
 	</div>
+	<!-- The Modal -->
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
 
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <p>	<label>Type Something(Press enter key to send)</label>
+	    	<br>
+	    	<input type="text" id="send_sms" required> <span style="color:blue; cursor: pointer;" onclick="getChat()">Refresh Chat</span><br>
+	    	<p id="resp"></p>
+	    	<input type="hidden" id="user" value="<?php echo $_SESSION['user']; ?>" required>
+	    	<div class="chat">
+	    		<p id="user1"></p>
+	    		<p id="user2"></p>
+	    	</div>
+	    </p>
+	  </div>
+
+	</div>
+	<!-- end modal -->
 </body>
 </html>
 <script type="text/javascript" src="js/elevatorEvents.js"></script>
  <script type="text/javascript" src="js/graph.js"></script>
+ <script type="text/javascript" src="js/chat.js"></script>
 <?php }else{ header("Location:index.html"); } ?>
  
  
